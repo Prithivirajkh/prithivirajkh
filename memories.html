@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Beautiful Memories 📸</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header h1 {
+            font-family: 'Pacifico', cursive;
+            color: #ff1744;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            color: #666;
+            font-size: 1.2em;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 40px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #ff6b9d, #ff1744);
+        }
+
+        .memory-card {
+            position: relative;
+            margin-bottom: 60px;
+            animation: fadeIn 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .memory-card:nth-child(1) { animation-delay: 0.2s; }
+        .memory-card:nth-child(2) { animation-delay: 0.4s; }
+        .memory-card:nth-child(3) { animation-delay: 0.6s; }
+        .memory-card:nth-child(4) { animation-delay: 0.8s; }
+        .memory-card:nth-child(5) { animation-delay: 1s; }
+        .memory-card:nth-child(6) { animation-delay: 1.2s; }
+
+        .memory-content {
+            width: 45%;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .memory-card:nth-child(odd) .memory-content {
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        .memory-card:nth-child(even) .memory-content {
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        .memory-icon {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            border: 4px solid #ff6b9d;
+            z-index: 10;
+        }
+
+        .memory-photo {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo-placeholder {
+            text-align: center;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .photo-placeholder p {
+            font-size: 0.8em;
+            margin-top: 10px;
+        }
+
+        .memory-title {
+            font-family: 'Pacifico', cursive;
+            color: #ff1744;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .memory-date {
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 15px;
+        }
+
+        .memory-description {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        .polaroid {
+            background: white;
+            padding: 15px;
+            padding-bottom: 60px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transform: rotate(-2deg);
+            transition: transform 0.3s ease;
+        }
+
+        .polaroid:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .nav-buttons {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .btn {
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Quicksand', sans-serif;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #ff6b9d, #ff1744);
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255,107,157,0.5);
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .memory-content {
+                width: calc(100% - 80px);
+                margin-left: 60px !important;
+            }
+
+            .memory-icon {
+                left: 30px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .memory-photo {
+                height: 200px;
+                font-size: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Our Beautiful Journey 💕</h1>
+            <p>Every moment with you is a memory worth treasuring</p>
+        </div>
+
+        <div class="timeline">
+            <div class="memory-card">
+                <div class="memory-icon">🌟</div>
+                <div class="memory-content">
+                    <div class="polaroid">
+                        <div class="memory-photo">
+                            <div class="photo-placeholder">
+                                📸
+                                <p>First Meeting</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="memory-title">When We First Met</h3>
+                    <p class="memory-date">The day everything changed</p>
+                    <p class="memory-description">
+                        I remember the first time I saw you. Time seemed to slow down, and I knew right then that you were someone special. Your smile caught my attention, but your personality captured my heart.
+                    </p>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <div class="memory-icon">☕</div>
+                <div class="memory-content">
+                    <div class="polaroid">
+                        <div class="memory-photo">
+                            <div class="photo-placeholder">
+                                📸
+                                <p>First Date</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="memory-title">Our First Date</h3>
+                    <p class="memory-date">A perfect beginning</p>
+                    <p class="memory-description">
+                        Coffee turned into hours of conversation. We talked about everything and nothing, and I never wanted it to end. That's when I realized talking to you was the easiest thing in the world.
+                    </p>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <div class="memory-icon">🎭</div>
+                <div class="memory-content">
+                    <div class="polaroid">
+                        <div class="memory-photo">
+                            <div class="photo-placeholder">
+                                📸
+                                <p>Adventure</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="memory-title">Our Adventures</h3>
+                    <p class="memory-date">Making memories together</p>
+                    <p class="memory-description">
+                        Whether we're exploring new places or just hanging out at home, every moment with you is an adventure. You make even the simplest activities feel special and exciting.
+                    </p>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <div class="memory-icon">🌙</div>
+                <div class="memory-content">
+                    <div class="polaroid">
+                        <div class="memory-photo">
+                            <div class="photo-placeholder">
+                                📸
+                                <p>Stargazing</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="memory-title">Late Night Talks</h3>
+                    <p class="memory-date">Under the stars</p>
+                    <p class="memory-description">
+                        Those nights where we lost track of time, sharing our dreams and fears. You make me feel understood in a way no one else ever has. These are the moments I treasure most.
+                    </p>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <div class="memory-icon">🎉</div>
+                <div class="memory-content">
+                    <div class="polaroid">
+                        <div class="memory-photo">
+                            <div class="photo-placeholder">
+                                📸
+                                <p>Celebrations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="memory-title">Celebrating Us</h3>
+                    <p class="memory-date">All our special moments</p>
+                    <p class="memory-description">
+                        From birthdays to random Tuesday celebrations, you've taught me that every day is worth celebrating when I'm with you. Here's to many more memories to come!
+                    </p>
+                </div>
+            </div>
+
+            <div class="memory-card">
+                <div class="memory-icon">💝</div>
+                <div class="memory-content">
+                    <div class="polaroid">
+                        <div class="memory-photo">
+                            <div class="photo-placeholder">
+                                📸
+                                <p>Forever</p>
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="memory-title">Our Future</h3>
+                    <p class="memory-date">The best is yet to come</p>
+                    <p class="memory-description">
+                        This is just the beginning of our story. I can't wait to create countless more memories with you, to share new experiences, and to build our future together. You and me, always. 💕
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="yes.html" class="btn">← Back</a>
+            <a href="playlist.html" class="btn">Our Playlist →</a>
+        </div>
+    </div>
+</body>
+</html>

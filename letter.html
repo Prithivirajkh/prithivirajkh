@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Love Letter 💌</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .letter-container {
+            max-width: 700px;
+            background: #fff;
+            padding: 60px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            position: relative;
+            animation: unfold 1s ease-out;
+        }
+
+        @keyframes unfold {
+            from {
+                opacity: 0;
+                transform: rotateX(-90deg);
+            }
+            to {
+                opacity: 1;
+                transform: rotateX(0);
+            }
+        }
+
+        .letter-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: repeating-linear-gradient(
+                90deg,
+                #ff6b9d 0px,
+                #ff6b9d 10px,
+                #ffa8c5 10px,
+                #ffa8c5 20px,
+                #ffcce0 20px,
+                #ffcce0 30px
+            );
+        }
+
+        .stamp {
+            position: absolute;
+            top: 60px;
+            right: 40px;
+            width: 80px;
+            height: 80px;
+            border: 3px dashed #ff1744;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            background: white;
+            transform: rotate(15deg);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            margin-top: 20px;
+        }
+
+        .header h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #ff1744;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .date {
+            color: #999;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .letter-content {
+            font-family: 'Quicksand', sans-serif;
+            line-height: 2;
+            color: #444;
+            font-size: 1.1em;
+            text-align: left;
+        }
+
+        .letter-content p {
+            margin-bottom: 25px;
+            text-indent: 30px;
+        }
+
+        .greeting {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            color: #ff1744;
+            text-indent: 0 !important;
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            text-align: right;
+            margin-top: 40px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2em;
+            color: #ff1744;
+        }
+
+        .hearts {
+            text-align: center;
+            font-size: 2em;
+            margin: 30px 0;
+        }
+
+        .nav-btn {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Quicksand', sans-serif;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #ff6b9d, #ff1744);
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255,107,157,0.5);
+        }
+
+        .wax-seal {
+            width: 60px;
+            height: 60px;
+            background: #d32f2f;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 5px 15px rgba(211,47,47,0.5);
+        }
+
+        @media (max-width: 768px) {
+            .letter-container {
+                padding: 40px 30px;
+            }
+            .header h1 {
+                font-size: 2.2em;
+            }
+            .stamp {
+                width: 60px;
+                height: 60px;
+                font-size: 30px;
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="letter-container">
+        <div class="stamp">💌</div>
+        
+        <div class="header">
+            <h1>To My Dearest Valentine</h1>
+            <p class="date">February 14, 2026</p>
+        </div>
+
+        <div class="letter-content">
+            <p class="greeting">My Love,</p>
+            
+            <p>
+                Every moment I spend with you feels like a beautiful dream that I never want to end. You've brought so much joy, laughter, and love into my life, and I can't imagine my days without you by my side.
+            </p>
+
+            <p>
+                From the first time we met, I knew there was something special about you. Your smile lights up my world, your laugh is my favorite melody, and your presence makes everything better. You have this incredible way of making ordinary moments feel magical.
+            </p>
+
+            <p>
+                I want you to know that you are appreciated, cherished, and loved beyond measure. Thank you for being patient with me, for understanding me, and for accepting me exactly as I am. You make me want to be a better person every single day.
+            </p>
+
+            <p>
+                This Valentine's Day, I want to celebrate not just our love, but the amazing person that you are. You deserve all the happiness in the world, and I promise to do everything I can to bring you joy and make you smile.
+            </p>
+
+            <p>
+                Here's to us, to all the memories we've created, and to all the adventures that lie ahead. I'm so grateful that you're my Valentine, today and every day.
+            </p>
+
+            <div class="hearts">💕 💖 💕</div>
+
+            <div class="signature">
+                Forever Yours,<br>
+                Your Valentine 💕
+            </div>
+        </div>
+
+        <div class="nav-btn">
+            <a href="yes.html" class="btn">← Back</a>
+            <a href="memories.html" class="btn">See Our Memories →</a>
+        </div>
+
+        <div class="wax-seal">💖</div>
+    </div>
+</body>
+</html>
